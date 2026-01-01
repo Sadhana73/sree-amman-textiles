@@ -1,43 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tailoring Services | Sree Amman Textiles & Tailoring</title>
-  <meta name="description" content="Explore tailoring services at Sree Amman Textiles & Tailoring in Guduvanchery. Blouse stitching, alterations, uniforms and custom tailoring." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Tailoring Services | Sree Amman Textiles & Tailoring</title>
+    <meta name="description" content="Quality stitching and textile services in Guduvanchery. Explore our tailoring services including blouse stitching, alterations, and custom tailoring.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #96999923 0%, #006064 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, rgba(0, 64, 143, 0.059), rgba(121, 68, 206, 0.95));
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>') repeat;
+            background-size: 30px 30px;
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-30px); }
+        }
+        
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #00838f, #00acc1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-card h3 {
+            color: #00838f;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        .why-choose {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 50px;
+        }
+        
+        .why-choose h2 {
+            color: #00838f;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-shadow: none;
+        }
+        
+        .why-choose ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .why-choose li {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f5f5f5, #e0f7fa);
+            border-radius: 10px;
+            border-left: 4px solid #00838f;
+            font-size: 1.1em;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .why-choose li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 131, 143, 0.3);
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 50px;
+        }
+        
+        .cta h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-shadow: none;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta button {
+            background: linear-gradient(135deg, #00838f, #00acc1);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 131, 143, 0.4);
+            font-weight: 600;
+        }
+        
+        .cta button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 131, 143, 0.5);
+            background: linear-gradient(135deg, #006064, #00838f);
+        }
+        
+        .cta button:active {
+            transform: translateY(0);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(146, 121, 160, 0.544), rgba(0, 96, 100, 0.95));
+            backdrop-filter: blur(10px);
+            color: white;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        footer a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .why-choose ul {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <header>
+<header>
     <h1>Our Tailoring Services</h1>
-    <p>Quality stitching & textile services in Guduvanchery</p>
-  </header>
+    <h2>Quality stitching & textile services in Guduvanchery</h2>
+</header>
 
-  <main>
-    <section>
-      <h2>Blouse Stitching</h2>
-      <p>Custom blouse stitching with perfect fitting and quality finishing.</p>
+<div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+        <article class="service-card">
+            <h3>Blouse Stitching</h3>
+            <p>Custom blouse stitching with perfect fitting and premium finishing.</p>
+        </article>
+        <article class="service-card">
+            <h3>Alterations & Fittings</h3>
+            <p>Quick and precise alterations for all types of garments.</p>
+        </article>
+        <article class="service-card">
+            <h3>School & Office Uniform Stitching</h3>
+            <p>Uniform stitching for schools and offices in and around Guduvanchery.</p>
+        </article>
+        <article class="service-card">
+            <h3>Custom Tailoring</h3>
+            <p>Tailor-made dresses designed to match your style and comfort.</p>
+        </article>
+    </div>
+    
+    <section class="why-choose">
+        <h2>Why Choose Us</h2>
+        <ul>
+            <li>✨ Experienced tailoring</li>
+            <li>🎯 Quality fabrics & finishing</li>
+            <li>💰 Affordable pricing</li>
+            <li>🤝 Trusted local service</li>
+        </ul>
     </section>
-
-    <section>
-      <h2>Alterations & Fittings</h2>
-      <p>Quick and precise alterations for all types of garments.</p>
+    
+    <section class="cta">
+        <h2>Looking for quality tailoring services?</h2>
+        <div class="cta-buttons">
+            <button>📞 Call Now</button>
+            <button>💬 WhatsApp Us</button>
+        </div>
     </section>
+</div>
 
-    <section>
-      <h2>School & Office Uniform Stitching</h2>
-      <p>Uniform stitching for schools and offices in and around Guduvanchery.</p>
-    </section>
-
-    <section>
-      <h2>Custom Tailoring</h2>
-      <p>Tailor-made dresses designed to match your style and comfort.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>📍 Sree Amman Textiles & Tailoring, Guduvanchery</p>
-    <a href="index.html">← Back to Home</a>
-  </footer>
+<footer>
+    <p><strong>Sree Amman Textiles & Tailoring</strong></p>
+    <p>📍 Location: Guduvanchery, Tamil Nadu</p>
+    <p><a href="index.html">← Back to Home</a></p>
+</footer>
 </body>
 </html>
+
+    
