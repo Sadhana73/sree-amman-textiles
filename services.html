@@ -206,6 +206,54 @@
         .cta button:active {
             transform: translateY(0);
         }
+
+        /* Description Container - Styled paragraph section */
+        .description-container {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            border-radius: 24px;
+            padding: 50px 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .description-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1BA8B8, #2BB8C8, #1BA8B8);
+            background-size: 200% 100%;
+            animation: gradient-shift 3s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .description-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #2c3e50;
+            margin: 0;
+            font-weight: 400;
+            letter-spacing: 0.4px;
+            position: relative;
+        }
+
+        .highlight {
+            color: #1BA8B8;
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-shadow: 1px 1px 2px rgba(27, 168, 184, 0.1);
+        }
         
         footer {
             text-align: center;
@@ -264,33 +312,20 @@
                 width: 100%;
                 max-width: 300px;
             }
-            <!--p tag style-->
-         
-    .description-container {
-        max-width: 1200px;
-        margin: 40px auto;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-radius: 24px;
-        padding: 50px 60px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        text-align: center;
-    }
 
-    .description-text {
-        font-size: 1.15rem;
-        line-height: 1.8;
-        color: #2c3e50;
-        margin: 0;
-        font-weight: 400;
-        letter-spacing: 0.3px;
-    }
+            .description-container {
+                padding: 35px 25px;
+                margin-bottom: 40px;
+            }
 
-    .highlight {
-        color: #17a2b8;
-        font-weight: 600;
-    }
+            .description-text {
+                font-size: 1.05rem;
+                line-height: 1.7;
+            }
 
+            .highlight {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -339,8 +374,9 @@
         </div>
     </section>
 </div>
-    <!--para before footer-->
-    <div class="description-container">
+
+<!-- Description Section - Styled paragraph before footer -->
+<div class="description-container">
     <p class="description-text">
         <span class="highlight">Sree Amman Textiles & Tailoring</span> is a trusted tailoring shop in Guduvanchery, offering blouse stitching, alterations, uniform stitching, and custom tailoring services for families in and around Guduvanchery.
     </p>
@@ -353,5 +389,3 @@
 </footer>
 </body>
 </html>
-
-    
