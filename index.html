@@ -4,23 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Textiles & Tailoring in Guduvanchery | Sree Amman Textiles
-</title>
+    <title>Textiles & Tailoring in Guduvanchery | Sree Amman Textiles</title>
 
-    <meta name="description" content="Sree Amman Textiles & Tailoring provides blouse stitching,
-        alterations, and uniform tailoring in Guduvanchery. 
-        Quality work at affordable prices."/>
+    <meta name="description" content="Sree Amman Textiles & Tailoring provides blouse stitching, alterations, and uniform tailoring in Guduvanchery. Quality work at affordable prices."/>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HXSDS58VHQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HXSDS58VHQ');
-</script>
-<meta name="google-site-verification" content="2whmG4C4TLPjBYQ-kxrLXzUNFqwLRfiEMMRJXEBq3P8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXSDS58VHQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HXSDS58VHQ');
+    </script>
+    <meta name="google-site-verification" content="2whmG4C4TLPjBYQ-kxrLXzUNFqwLRfiEMMRJXEBq3P8" />
 
     <style>
         * {
@@ -34,6 +30,103 @@
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
+            padding-top: 70px;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.98), rgba(118, 75, 162, 0.98));
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            opacity: 0.9;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 35px;
+        }
+
+        .nav-item {
+            margin: 0;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #e0e7ff;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-toggle-label {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .nav-toggle-label span {
+            width: 28px;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
         }
 
         /* Header */
@@ -293,8 +386,76 @@
             color: #4f46e5;
         }
 
-        /* Responsive Design */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .nav-container {
+                padding: 12px 20px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-toggle-label {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: linear-gradient(135deg, rgba(102, 126, 234, 0.98), rgba(118, 75, 162, 0.98));
+                flex-direction: column;
+                padding: 80px 30px 30px;
+                gap: 0;
+                transition: right 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-item {
+                margin: 0;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-item:last-child {
+                border-bottom: none;
+            }
+
+            .nav-link {
+                font-size: 1.1rem;
+                display: block;
+                padding: 10px 0;
+            }
+
+            .nav-link::after {
+                display: none;
+            }
+
+            .nav-toggle:checked ~ .nav-menu {
+                right: 0;
+            }
+
+            .nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+                transform: rotate(45deg) translate(7px, 7px);
+            }
+
+            .nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+
             header h1 {
                 font-size: 2rem;
             }
@@ -312,22 +473,39 @@
                 font-size: 1rem;
             }
         }
-
     </style>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./homeMenu.html" class="nav-logo">Sree Amman Textiles & Tailoring</a>
+            
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="./homeMenu.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="./service page.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="./contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <header>
         <div class="container">
             <h1>Textiles & Tailoring Services in Guduvanchery</h1>
-            <p>Sree Amman Textiles & Tailoring offers quality fabrics and expert tailoring services for men, women, and families in Guduvanchery.
-</p>
+            <p>Sree Amman Textiles & Tailoring offers quality fabrics and expert tailoring services for men, women, and families in Guduvanchery.</p>
             <p class="location">📍 Guduvanchery, Tamil Nadu</p>
 
-            <a href="services.html" class="cta-button">View Our Services</a>
+            <a href="./service page.html" class="cta-button">View Our Services</a>
             <a href="https://wa.me/919884149127" class="cta-button" aria-label="WhatsApp Sree Amman Textiles & Tailoring">WhatsApp Us</a>
-
             <a href="tel:+919884149127" class="cta-button call-button">Call Now</a>
         </div>
     </header>
@@ -432,10 +610,7 @@
     <section class="contact">
         <div class="container">
             <h2>Get In Touch</h2>
-             <p>
-We proudly serve customers from Guduvanchery and nearby areas for all tailoring 
-and textile needs.
-</p>
+            <p>We proudly serve customers from Guduvanchery and nearby areas for all tailoring and textile needs.</p>
             <p>Ready to experience quality tailoring? Contact us today!</p>
             <p class="contact-info">📞 +91 9884149127</p>
             <a href="https://wa.me/919884149127" class="cta-button" aria-label="WhatsApp Sree Amman Textiles & Tailoring">WhatsApp Us</a>
@@ -451,7 +626,7 @@ and textile needs.
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript for FAQ -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         var faqCards = document.querySelectorAll('.faq-card');
